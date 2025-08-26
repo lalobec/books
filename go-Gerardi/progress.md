@@ -1,4 +1,6 @@
 # Chapter 1
 - [x] Basic word counter
 - [x] Testing basic word counter
-- [ ] Adding command-line flags
+- [x] Adding command-line flags
+- [x] Compiling your tools for different platforms
+- [ ] Exercises
