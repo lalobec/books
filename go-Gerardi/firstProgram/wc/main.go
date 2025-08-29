@@ -13,18 +13,24 @@ func main() {
 	// default value is false
 	lines := flag.Bool("l", false, "Count lines")
 
+	// Second flag, "-b", to count bytes
+	byte_count := flag.Bool("b", false, "Count bytes")
+
 	// Parse (analyze) the flags provided by user
 	flag.Parse()
 
-	fmt.Println(count(os.Stdin, *lines))
+	fmt.Println(count(os.Stdin, *lines, *byte_count))
 }
 
-func count(r io.Reader, countLines bool) int {
+func count(r io.Reader, countLines bool, countBytes bool) int {
 	scanner := bufio.NewScanner(r)
 
-	// If the count lines flag is false, we count the words:
 	if !countLines {
-		scanner.Split(bufio.ScanWords)
+		if !countBytes {
+			scanner.Split(bufio.ScanWords)
+		} else {
+			scanner.Split(bufio.ScanBytes)
+		}
 	}
 
 	wc := 0
