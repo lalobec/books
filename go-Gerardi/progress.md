@@ -3,4 +3,4 @@
 - [x] Testing basic word counter
 - [x] Adding command-line flags
 - [x] Compiling your tools for different platforms
-- [ ] Exercises
+- [x] Exercises
